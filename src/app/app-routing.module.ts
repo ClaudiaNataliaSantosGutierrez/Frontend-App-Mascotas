@@ -18,6 +18,10 @@ const routes: Routes = [
     loadChildren: () => import("./modulos/seguridad/seguridad.module").then(x => x.SeguridadModule)
   },
   {
+    path: 'administracion',
+    loadChildren: () => import("./modulos/administracion/administracion.module").then(x => x.AdministracionModule)
+  },
+  {
     path:'**',
     component: ErrorComponent
   }
