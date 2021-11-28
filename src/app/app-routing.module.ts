@@ -26,6 +26,10 @@ const routes: Routes = [
     loadChildren: () => import("./modulos/visita/visita.module").then(x => x.VisitaModule)
   },
   {
+    path: 'solicitudes',
+    loadChildren: () => import("./modulos/solicitudes/solicitudes.module").then(x => x.SolicitudesModule)
+  },
+  {
     path:'**',
     component: ErrorComponent
   }
