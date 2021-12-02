@@ -17,15 +17,15 @@
       </div>
       <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
         <form [formGroup]="fgValidador" (ngSubmit)="IdentificarUsuario()">
-          <h4 class="card-title center-align">Identificacion de Usuarios</h4>
+          <h4 class="card-title center-align">Identificación de Usuarios</h4>
           <br/>
           <br/>
 
           <!-- Email input -->
           <div class="form-outline mb-4">
             <input formControlName="usuario" type="email" id="email" class="validate"
-              placeholder="Ingresa tu correo electronico" />
-            <label class="form-label" for="email">Email</label>
+              placeholder="Ingresa tu usuario" />
+            <label class="form-label" for="email">Usuario</label>
           </div>
 
           <!-- Password input -->
@@ -41,18 +41,21 @@
           <div class="form-check form-check-inline">
             <input class="form-check-input me-2" type="checkbox" value="" id="checkboxNoLabel" />
             <label class="form-check-label" for="form2Example3">
-              Recuerdame
+              Recuérdame
             </label>
           </div>
             <a href="#!" class="text-body">Olvidaste tu contraseña?</a>
           </div>
 
           <div class="text-center text-lg-start mt-4 pt-2">
-            <button [disabled]="!fgValidador.valid" type="submit" name="action" class="btn btn-outline-primary">Ingresar</button>
+            <button [disabled]="!fgValidador.valid" type="submit" name="action" class="btn btn-outline-primary">Login</button>
             <p class="small fw-bold mt-2 pt-1 mb-0">No tienes una cuenta? <a href="#!"
               class="link-primary">Registrar</a></p>
           </div>
           <br/>
           <br/>
+        </form>
       
-       
+      </div>
+    </div>
+  </div>         

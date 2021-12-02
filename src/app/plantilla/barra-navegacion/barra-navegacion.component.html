@@ -14,9 +14,9 @@
             Personas
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="administracion/crear-persona">Crear Persona</a></li>
-            <li><a class="dropdown-item" href="administracion/editar-persona">Editar Persona</a></li>
-            <li><a class="dropdown-item" href="administracion/buscar-persona">Buscar Persona</a></li>
+            <li><a class="dropdown-item" routerLink="administracion/crear-persona">Crear Persona</a></li>
+            <li><a class="dropdown-item" routerLink="administracion/editar-persona">Editar Persona</a></li>
+            <li><a class="dropdown-item" routerLink="administracion/buscar-persona">Buscar Persona</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -24,9 +24,9 @@
             Mascotas
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="administracion/crear-mascota">Crear Mascota</a></li>
-            <li><a class="dropdown-item" href="administracion/editar-mascota">Editar Mascota</a></li>
-            <li><a class="dropdown-item" href="administracion/buscar-mascota">Buscar Mascota</a></li>
+            <li><a class="dropdown-item" routerLink="administracion/crear-mascota">Crear Mascota</a></li>
+            <li><a class="dropdown-item" routerLink="administracion/editar-mascota">Editar Mascota</a></li>
+            <li><a class="dropdown-item" routerLink="administracion/buscar-mascota">Buscar Mascota</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -34,9 +34,9 @@
             Veterinarios
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="administracion/crear-veterinario">Crear Veterinario</a></li>
-            <li><a class="dropdown-item" href="administracion/editar-veterinario">Editar Veterinario</a></li>
-            <li><a class="dropdown-item" href="administracion/buscar-veterinario">Buscar Veterinario</a></li>
+            <li><a class="dropdown-item" routerLink="administracion/crear-veterinario">Crear Veterinario</a></li>
+            <li><a class="dropdown-item" routerLink="administracion/editar-veterinario">Editar Veterinario</a></li>
+            <li><a class="dropdown-item" routerLink="administracion/buscar-veterinario">Buscar Veterinario</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -44,9 +44,9 @@
             Veterinarias
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="administracion/crear-veterinaria">Crear Veterinaria</a></li>
-            <li><a class="dropdown-item" href="administracion/editar-veterinaria">Editar Veterinaria</a></li>
-            <li><a class="dropdown-item" href="administracion/buscar-veterinaria">Buscar Veterinaria</a></li>
+            <li><a class="dropdown-item" routerLink="administracion/crear-veterinaria">Crear Veterinaria</a></li>
+            <li><a class="dropdown-item" routerLink="administracion/editar-veterinaria">Editar Veterinaria</a></li>
+            <li><a class="dropdown-item" routerLink="administracion/buscar-veterinaria">Buscar Veterinaria</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -54,9 +54,9 @@
             Solicitudes
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="solicitudes/crear-solicitud">Crear Solicitudes</a></li>
-            <li><a class="dropdown-item" href="solicitudes/editar-solicitud">Editar Solicitudes</a></li>
-            <li><a class="dropdown-item" href="#">Ver Solicitudes</a></li>
+            <li><a class="dropdown-item" routerLink="solicitudes/crear-solicitud">Crear Solicitudes</a></li>
+            <li><a class="dropdown-item" routerLink="solicitudes/editar-solicitud">Editar Solicitudes</a></li>
+            <li><a class="dropdown-item" routerLink="#">Ver Solicitudes</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -64,15 +64,13 @@
             Visitas
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="visita/hacer-visita">Hacer Visita</a></li>
-            <li><a class="dropdown-item" href="#">Ver Visitas</a></li>
+            <li><a class="dropdown-item" routerLink="visita/hacer-visita">Hacer Visita</a></li>
+            <li><a class="dropdown-item" routerLink="#">Ver Visitas</a></li>
           </ul>
         </li>
 
-        <li><a class="dropdown-item" href="seguridad/identificacion">Iniciar Sesion</a></li>
-
       </ul>
     </div>
-    <a class="nav-link text-dark" href="#">Logout</a>
+    <a class="nav-link text-dark" routerLink="seguridad/identificacion">Login</a>
   </div>
 </nav>
