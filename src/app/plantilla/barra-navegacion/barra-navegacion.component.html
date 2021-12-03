@@ -9,7 +9,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
-        <li class="nav-item dropdown">
+        <li *ngIf="seInicioSesion" class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Personas
           </a>
@@ -19,7 +19,7 @@
             <li><a class="dropdown-item" routerLink="administracion/buscar-persona">Buscar Persona</a></li>
           </ul>
         </li>
-        <li class="nav-item dropdown">
+        <li *ngIf="seInicioSesion" class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Mascotas
           </a>
@@ -29,7 +29,7 @@
             <li><a class="dropdown-item" routerLink="administracion/buscar-mascota">Buscar Mascota</a></li>
           </ul>
         </li>
-        <li class="nav-item dropdown">
+        <li *ngIf="seInicioSesion" class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Veterinarios
           </a>
@@ -39,7 +39,7 @@
             <li><a class="dropdown-item" routerLink="administracion/buscar-veterinario">Buscar Veterinario</a></li>
           </ul>
         </li>
-        <li class="nav-item dropdown">
+        <li *ngIf="seInicioSesion" class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Veterinarias
           </a>
@@ -49,7 +49,7 @@
             <li><a class="dropdown-item" routerLink="administracion/buscar-veterinaria">Buscar Veterinaria</a></li>
           </ul>
         </li>
-        <li class="nav-item dropdown">
+        <li *ngIf="seInicioSesion" class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Solicitudes
           </a>
@@ -59,7 +59,7 @@
             <li><a class="dropdown-item" routerLink="#">Ver Solicitudes</a></li>
           </ul>
         </li>
-        <li class="nav-item dropdown">
+        <li *ngIf="seInicioSesion" class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Visitas
           </a>
@@ -71,6 +71,7 @@
 
       </ul>
     </div>
-    <a class="nav-link text-dark" routerLink="seguridad/identificacion">Login</a>
+    <a *ngIf="!seInicioSesion" class="nav-link text-dark" routerLink="seguridad/identificacion">Login</a>
+    <a *ngIf="seInicioSesion" class="nav-link text-dark" routerLink="seguridad/cerrar-sesion">Logout</a>
   </div>
 </nav>

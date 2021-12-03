@@ -11,7 +11,7 @@ const routes: Routes = [
   {
     path:"",
     pathMatch: 'full',
-    redirectTo: '/inicio'
+    redirectTo: '/seguridad/identificacion'
   },
   {
     path: 'seguridad',
