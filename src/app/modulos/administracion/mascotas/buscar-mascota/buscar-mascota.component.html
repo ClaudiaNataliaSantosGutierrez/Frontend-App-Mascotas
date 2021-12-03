@@ -1,60 +1,44 @@
-<br>
-<div class="container">
-    <h3>Buscar Mascota</h3>
-    <p>Indique los datos para busqueda</p>
-  </div>
-  
-  <div class="row">
-      <form class="col s12">
-        <div class="container">
-            <div class="row">
-                <div class="input-field col s4">
-                    <input placeholder="" id="first_name" type="text" class="validate">
-                    <label for="first_name">Nombre</label>
-                </div>
-                <div class="input-field col s4">
-                    <select class="browser-default">
-                        <option value="" disabled selected>Tipo</option>
-                        <option value="1">Gato</option>
-                        <option value="2">Perro</option>
-                        <option value="3">Caballo</option>
-                    </select>
-                </div>
-                </div>
-        
-                <div class="row">
-                <div class="input-field col s4">
-                    <input id="bornDate" type="date" class="validate">
-                    <label for="bornDate">Fecha Nacimiento</label>
-                </div>
-                <div class="input-field col s4">
-                    <input placeholder="" id="raza" type="text" class="validate">
-                    <label for="raza">Raza</label>
-                </div>
-                </div>
-  
-        
-            <div class="row">
-                <div class="input-field col s4">
-                  <input placeholder="" id="estatura" type="text" class="validate">
-                  <label for="estatura">Estatura</label>
-                </div>
-                <div class="input-field col s4">
-                  <input id="pelaje" type="text" class="validate">
-                  <label for="pelaje">Color Pelaje</label>
-                </div>
-                <div class="input-field col s4">
-                  <input id="ojos" type="text" class="validate">
-                  <label for="ojos">Color Ojos</label>
-                </div>
-              </div>
-        </div>
-        
-      </form>
-      <br>
-      <div class="container">
-        <button class="btn waves-effect waves-light" type="submit" name="action">Buscar</button>
-      </div>
-      
-      <br>
-    </div>
+<a routerLink="/administracion/crear-mascota" class="btn">Nueva Mascota</a>
+<table class="table responsive">
+  <thead>
+    <tr>
+      <th>
+        Nombre
+      </th>
+      <th>
+        Tipo
+      </th>
+      <th>
+        Raza
+      </th>
+      <th>
+        Editar
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of listadoRegistros">
+      <td>
+        {{p.nombre}}
+      </td>
+      <td>
+        {{p.tipo}}
+      </td>
+      <td>
+        {{p.raza}}
+      </td>
+      <td>
+        {{p.colorPelaje}}
+      </td>
+      <td>
+        {{p.colorOjos}}
+      </td>
+      <td>
+        {{p.fechaNacimiento}}
+      </td>
+      <td>
+        <a routerLink="/administracion/editar-mascota/{{p.id}}" class="btn">Editar Mascota</a>
+      </td>
+    </tr>
+  </tbody>
+</table>

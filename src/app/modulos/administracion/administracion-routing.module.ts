@@ -37,11 +37,15 @@ const routes: Routes = [
   },
   //Rutas para Mascotas
   {
+    path: "listar-mascotas",
+    component: BuscarMascotaComponent
+  },
+  {
     path: 'crear-mascota',
     component: CrearMascotaComponent
   },
   {
-    path: 'editar-mascota',
+    path: 'editar-mascota/:id',
     component: EditarMascotaComponent
   },
   {
