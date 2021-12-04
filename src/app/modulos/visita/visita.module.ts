@@ -7,6 +7,7 @@ import { EditarVisitaComponent } from './editar-visita/editar-visita.component';
 import { EliminarVisitaComponent } from './eliminar-visita/eliminar-visita.component';
 import { BuscarVisitaComponent } from './buscar-visita/buscar-visita.component';
 import { ListarVisitaComponent } from './listar-visita/listar-visita.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,7 +20,9 @@ import { ListarVisitaComponent } from './listar-visita/listar-visita.component';
   ],
   imports: [
     CommonModule,
-    VisitaRoutingModule
+    VisitaRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class VisitaModule { }
