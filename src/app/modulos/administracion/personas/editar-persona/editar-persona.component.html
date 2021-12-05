@@ -1,48 +1,52 @@
 <br>
 <div class="container">
-    <h3>Editar Persona</h3>
-    <p>En esta sección se puede gestionar un propietario de mascota con sus datos personales</p>
-  </div>
-  
-  <div class="row">
-      <form class="col s12">
-        <div class="row">
-          <div class="input-field col s6">
-            <input placeholder="" id="first_name" type="text" class="validate">
-            <label for="first_name">Nombres</label>
-          </div>
-          <div class="input-field col s6">
-            <input id="last_name" type="text" class="validate">
-            <label for="last_name">Apellidos</label>
-          </div>
+  <h3>Editar Persona</h3>
+  <p>Realice los cambios necesarios en los datos de la persona y guarde los cambios</p>
+</div>
+
+<div class="row">
+    <form [formGroup]="fgValidador" (ngSubmit)="EditarPersona()" class="col s12">
+      <input type="hidden" formControlName="id">
+      <div class="row">
+        <div class="input-field col s6">
+          <input formControlName="nombres" placeholder="" id="first_name" type="text" class="validate">
+          <label for="first_name" class="active">Nombres</label>
         </div>
-  
-        <div class="row">
-          <div class="input-field col s6">
-            <input id="email" type="email" class="validate">
-            <label for="email">Correo</label>
-          </div>
-          <div class="input-field col s6">
-            <input placeholder="" id="identificacion" type="text" class="validate">
-            <label for="identificacion">Identificación</label>
-          </div>
+        <div class="input-field col s6">
+          <input formControlName="apellidos" id="last_name" type="text" class="validate">
+          <label for="last_name" class="active">Apellidos</label>
         </div>
-  
-        <div class="row">
-          <div class="input-field col s6">
-            <input placeholder="" id="direccion" type="text" class="validate">
-            <label for="direccion">Dirección</label>
-          </div>
-          <div class="input-field col s6">
-            <input id="celular" type="text" class="validate">
-            <label for="celular">Celular</label>
-          </div>
-        </div>
-      </form>
-      <br>
-      <div class="container">
-        <button class="btn waves-effect waves-light" type="submit" name="action">Modificar</button>
       </div>
-      
-      <br>
-    </div>
+
+      <div class="row">
+        <div class="input-field col s6">
+          <input formControlName="correo" id="email" type="email" class="validate">
+          <label for="email" class="active">Correo</label>
+        </div>
+        <div class="input-field col s6">
+          <input formControlName="identificacion" placeholder="" id="identificacion" type="text" class="validate">
+          <label for="identificacion" class="active">Identificación</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s6">
+          <input formControlName="direccion" placeholder="" id="direccion" type="text" class="validate">
+          <label for="direccion" class="active">Dirección</label>
+        </div>
+        <div class="input-field col s6">
+          <input formControlName="celular" id="celular" type="text" class="validate">
+          <label for="celular" class="active">Celular</label>
+        </div>
+      </div>
+
+      <div class="container">
+        <button [disabled]="!fgValidador.valid" class="btn waves-effect waves-light" type="submit" name="action">Guardar</button>
+      </div>
+
+    </form>
+    <br>
+    
+    
+    <br>
+  </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ModeloCount } from 'src/app/modelos/count.modelo';
 import { ModeloPersona } from 'src/app/modelos/persona.modelo';
 import { PersonaService } from 'src/app/servicios/persona.service';
@@ -14,9 +15,10 @@ export class BuscarPersonaComponent implements OnInit {
   listaPersonas: ModeloPersona[] = [];
   cantidadPersonas: ModeloCount;
 
-  constructor(private personaServicio: PersonaService) {
+  constructor(private personaServicio: PersonaService,
+    private route: ActivatedRoute) {
     this.cantidadPersonas = new ModeloCount();
-   }
+  }
 
   ngOnInit(): void {
     this.ObtenerListadoPersonas();

@@ -28,7 +28,7 @@ const routes: Routes = [
     component: EditarPersonaComponent
   },
   {
-    path: 'eliminar-persona',
+    path: 'eliminar-persona/:id',
     component: EliminarPersonaComponent
   },
   {

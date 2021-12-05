@@ -61,4 +61,13 @@ export class PersonaService {
     })
   }
 
+  //Eliminar una persona enviando el DELETE
+  EliminarPersona(id: String): Observable<any>{
+    return this.http.delete(`${this.url}/personas/${id}`, {
+      headers: new HttpHeaders({
+        'Authorization': `Bearer ${this.token}`
+      })
+    })
+  }
+
 }
