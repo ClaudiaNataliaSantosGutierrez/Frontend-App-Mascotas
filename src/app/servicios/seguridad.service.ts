@@ -47,6 +47,17 @@ export class SeguridadService {
     }
   }
 
+  //Sacar el TOKEN de la sesion del local storage del navegador
+  ObtenerToken(){
+    let datosString = localStorage.getItem('datosSesion');
+    if (datosString){
+      let datos = JSON.parse(datosString);
+      return datos.tk;
+    }else{
+      return null;
+    }
+  }
+
   //Eliminar la informacion de la sesion del local storage del navegador
   //Al cerrar sesion
   EliminarInformacionSesion(){

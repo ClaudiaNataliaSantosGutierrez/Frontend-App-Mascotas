@@ -24,7 +24,7 @@ const routes: Routes = [
     component: CrearPersonaComponent
   },
   {
-    path: 'editar-persona',
+    path: 'editar-persona/:id',
     component: EditarPersonaComponent
   },
   {
@@ -33,6 +33,10 @@ const routes: Routes = [
   },
   {
     path: 'buscar-persona',
+    component: BuscarPersonaComponent
+  },
+  {
+    path: 'listar-personas',
     component: BuscarPersonaComponent
   },
   //Rutas para Mascotas
