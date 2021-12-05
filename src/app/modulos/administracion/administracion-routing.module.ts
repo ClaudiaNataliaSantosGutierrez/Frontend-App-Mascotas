@@ -62,15 +62,19 @@ const routes: Routes = [
     component: CrearVeterinarioComponent
   },
   {
-    path: 'editar-veterinario',
+    path: 'editar-veterinario/:id',
     component: EditarVeterinarioComponent
   },
   {
-    path: 'eliminar-veterinario',
+    path: 'eliminar-veterinario/:id',
     component: EliminarVeterinarioComponent
   },
   {
     path: 'buscar-veterinario',
+    component: BuscarVeterinarioComponent
+  },
+  {
+    path: 'listar-veterinarios',
     component: BuscarVeterinarioComponent
   },
   //Rutas Para Veterinaria

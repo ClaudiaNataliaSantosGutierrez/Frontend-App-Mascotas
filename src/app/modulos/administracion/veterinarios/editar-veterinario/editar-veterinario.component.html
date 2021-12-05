@@ -1,52 +1,54 @@
 <br>
 <div class="container">
     <h3>Editar Veterinario</h3>
-    <p>En esta sección se puede gestionar un veterinario con sus datos personales</p>
+    <p>Realice los cambios necesarios</p>
   </div>
   
   <div class="row">
-      <form class="col s12">
+      <form [formGroup]="fgValidador" (ngSubmit)="EditarVeterinario()" class="col s12">
         <div class="row">
           <div class="input-field col s6">
-            <input placeholder="" id="first_name" type="text" class="validate">
-            <label for="first_name">Nombres</label>
+            <input formControlName="nombres" placeholder="" id="first_name" type="text" class="validate">
+            <label for="first_name" class="active">Nombres</label>
           </div>
           <div class="input-field col s6">
-            <input id="last_name" type="text" class="validate">
-            <label for="last_name">Apellidos</label>
+            <input formControlName="apellidos" id="last_name" type="text" class="validate">
+            <label for="last_name" class="active">Apellidos</label>
           </div>
         </div>
   
         <div class="row">
           <div class="input-field col s6">
-            <input id="email" type="email" class="validate">
-            <label for="email">Correo</label>
+            <input formControlName="correo" id="email" type="email" class="validate">
+            <label for="email" class="active">Correo</label>
           </div>
           <div class="input-field col s6">
-            <input placeholder="" id="identificacion" type="text" class="validate">
-            <label for="identificacion">Identificación</label>
+            <input formControlName="identificacion" placeholder="" id="identificacion" type="text" class="validate">
+            <label for="identificacion" class="active">Identificación</label>
           </div>
         </div>
   
         <div class="row">
           <div class="input-field col s4">
-            <input placeholder="" id="licencia" type="text" class="validate">
-            <label for="licencia">Licencia</label>
+            <input formControlName="licencia" placeholder="" id="licencia" type="text" class="validate">
+            <label for="licencia" class="active">Licencia</label>
           </div>
           <div class="input-field col s4">
-            <input id="celular" type="text" class="validate">
-            <label for="celular">Celular</label>
+            <input formControlName="celular" id="celular" type="text" class="validate">
+            <label for="celular" class="active">Celular</label>
           </div>
           <div class="input-field col s4">
-            <input id="especialidad" type="text" class="validate">
-            <label for="espacialidad">Especialidad</label>
+            <input formControlName="especialidad" id="especialidad" type="text" class="validate">
+            <label for="espacialidad" class="active">Especialidad</label>
           </div>
         </div>
+        <div class="container">
+          <button [disabled]="!fgValidador.valid" class="btn waves-effect waves-light" type="submit" name="action">Guardar</button>
+        </div>
+
       </form>
       <br>
-      <div class="container">
-        <button class="btn waves-effect waves-light" type="submit" name="action">Modificar</button>
-      </div>
+      
       
       <br>
     </div>
