@@ -37,6 +37,15 @@ export class PersonaService {
     });
   }
 
+  //Traer Persona por ID con GET y enviando el Token
+  ObtenerPersonaPorIdLista(id: String): Observable<ModeloPersona[]>{
+    return this.http.get<ModeloPersona[]>(`${this.url}/personas/${id}`, {
+      headers: new HttpHeaders({
+        'Authorization': `Bearer ${this.token}`
+      })
+    });
+  }
+
   //Traer la cantidad de personas en Base de Datos, el count que no necesita TOKEN
   ObtenerCantidadPersonas(): Observable<ModeloCount>{
     return this.http.get<ModeloCount>(`${this.url}/personas/count`);

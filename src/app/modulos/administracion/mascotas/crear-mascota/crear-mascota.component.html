@@ -13,8 +13,8 @@
             <div class="input-field col s4">
               <label class="active">Usuario Propietario</label>
               <select formControlName="personaId" class="browser-default">
-                <option *ngFor="let p of listaPersonas">
-                  {{p.id}}
+                <option *ngFor="let p of listaPersonas" [value]="p.id">
+                  {{p.nombres}} {{p.apellidos}}
                 </option>
               </select>
           </div>
@@ -26,11 +26,12 @@
                     <label for="first_name">Nombre</label>
                 </div>
                 <div class="input-field col s4">
-                    <select formControlName="tipo" class="browser-default">
+                  <label class="active">Tipo de Animal</label>  
+                  <select formControlName="tipo" class="browser-default">
                         <option value="" disabled selected>Tipo</option>
-                        <option value="1">Gato</option>
-                        <option value="2">Perro</option>
-                        <option value="3">Caballo</option>
+                        <option value="Gato">Gato</option>
+                        <option value="Perro">Perro</option>
+                        <option value="Caballo">Caballo</option>
                     </select>
                 </div>
                 </div>

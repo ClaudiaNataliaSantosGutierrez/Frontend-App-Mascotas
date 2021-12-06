@@ -6,6 +6,6 @@ export class ModeloMascota{
     colorPelaje?: String;
     colorOjos?: String;
     estatura?: String;
-    fechaNacimiento?: Date;
+    fechaNacimiento?: String;
     personaId?: String;
 }
