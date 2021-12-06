@@ -1,7 +1,7 @@
 export class ModeloVisita{
     id?: string;
-    fecha ?:string;
-    temperatura ?: string;
+    fecha ?:Date;
+    temperatura ?: String;
     peso ?: string;
     frecCardiaca ?: string;
     frecRespiratoria ?: string;

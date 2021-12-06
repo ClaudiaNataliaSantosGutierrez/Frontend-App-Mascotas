@@ -12,7 +12,7 @@ export class MascotaService {
   url = "http://localhost:3000";
   token: String = '';
   constructor(private http: HttpClient, private seguridadServicio: SeguridadService) { 
-    this.token = this.seguridadServicio.ObtenerInformacionSesion();
+    this.token = this.seguridadServicio.ObtenerInformacionSesion();  // Creo que aca es el de obtenerToken
   }
 
   ObtenerRegistros(): Observable<ModeloMascota[]> {

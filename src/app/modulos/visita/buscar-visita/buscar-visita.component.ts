@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ModeloVisita } from 'src/app/modelos/visita.modelo';
+import { VisitasService } from 'src/app/servicios/visitas.service';
 
 @Component({
   selector: 'app-buscar-visita',
@@ -6,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./buscar-visita.component.css']
 })
 export class BuscarVisitaComponent implements OnInit {
+  
+  listadoRegistros : ModeloVisita[] = [];
+  
+  constructor(private visitaServicio : VisitasService) {
 
-  constructor() { }
+  }
 
   ngOnInit(): void {
   }
 
+  ObtenerListadoVisita() {
+    this.visitaServicio.ObtenerRegistros().subscribe(
+      (datos:ModeloVisita[])=> {
+        this.listadoRegistros= datos;
+    })
+  }
 }

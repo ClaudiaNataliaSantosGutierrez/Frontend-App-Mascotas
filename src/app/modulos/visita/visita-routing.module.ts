@@ -7,11 +7,15 @@ import { HacerVisitaComponent } from './hacer-visita/hacer-visita.component';
 
 const routes: Routes = [
   {
+    path : 'listar-visita',
+    component : BuscarVisitaComponent
+  },
+  {
     path: 'hacer-visita',
     component : HacerVisitaComponent
   },
   {
-    path : 'editar-visita',
+    path : 'editar-visita/:id',
     component : EditarVisitaComponent
   },
   {

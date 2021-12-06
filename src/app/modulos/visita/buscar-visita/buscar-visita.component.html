@@ -1,100 +1,31 @@
-<form class="row g-3 needs-validation" novalidate>
-    <div class="col-md-4">
-      <label for="fecha" class="form-label">Fecha</label>
-      <input type="date" class="form-control" id="fecha" placeholder="28-11-2021" required>
-      <div class="valid-feedback">
-        Looks good!
-      </div>
-    </div>
-
-    <div class="col-md-2">
-      <label for="temperatura" class="form-label">temperatura</label>
-      <input type="text" class="form-control" id="temperatura" placeholder="Temperatura" required>
-      <div class="valid-feedback">
-        Looks good!
-      </div>
-      <div class="invalid-feedback">
-        Please select a valid state.
-      </div>
-      
-    </div>
-
-    <div class="col-md-1">
-      <label for="gradosT" class="form-label">Unidad</label>
-      <select class="form-select" id="gradosT" required>
-        <option>k</option>
-        <option>°C</option>
-        <option>°F</option>
-      </select>
-      <div class="invalid-feedback">
-        Please select a valid state.
-      </div>
-    </div>
-  
-    <div class="col-md-3">
-        <label for="peso" class="form-label">Peso</label>
-        <input type="text" class="form-control" id="peso" placeholder="" required>
-        <div class="valid-feedback">
-          Looks good!
-        </div>
-    </div>
-    <div class="col-md-2">
-      <label for="UnidadPeso" class="form-label">Unidad</label>
-      <select class="form-select" id="UnidadPeso" required>
-        <option>kg</option>
-        <option>lbm</option>
-      </select>
-      <div class="invalid-feedback">
-        Please select a valid state.
-      </div>
-    </div>
-
-    <div class="col-md-4">
-        <label for="frecCardiaca" class="form-label">Frecuencia Cardiaca</label>
-        <input type="text" class="form-control" id="frecCardiaca" placeholder="Frecuencia Cardaica" required>
-        <div class="valid-feedback">
-          Looks good!
-        </div>
-    </div>
-    <div class="col-md-2">
-      <label for="unidadFrecCar" class="form-label">Sistema</label>
-      <span class="input-group-text md-1" id="inputGroupPrepend">latidos/min</span>
-    </div>
-    <div class="col-md-4">
-        <label for="frecRespiratoria" class="form-label">Frecuencia Respiratoria</label>
-        <input type="text" class="form-control" id="frecRespiratoria" placeholder="Frecuencia Respiratoria" required>
-        <div class="valid-feedback">
-          Looks good!
-        </div>
-    </div>
-    <div class="col-md-2">
-      <label for="unidadFrecRes" class="form-label">Sistema</label>
-      <span class="input-group-text md-1" id="inputGroupPrepend">latidos/min</span>
-    </div>
-    <div class="col-md-4">
-        <label for="estado" class="form-label">Estado</label>
-        <input type="text" class="form-control" id="estado" placeholder="Estado" required>
-        <div class="valid-feedback">
-          Looks good!
-        </div>
-    </div>
-    <div class="col-md-8">
-        <label for="medicinas" class="form-label">Medicinas</label>
-        <input type="text" class="form-control" id="medicinas" placeholder="Medicinas" required>
-        <div class="valid-feedback">
-          Looks good!
-        </div>
-    </div>
-    <div class="col-md-12">
-        <label for="observaciones" class="form-label">Observaciones</label>
-        <input type="text" class="form-control" id="observaciones" placeholder="Observaciones" required>
-        <div class="valid-feedback">
-          Looks good!
-        </div>
-    </div>
-  
-    <div class="col-12">
-      <button class="btn btn-primary" type="submit">Crear</button>
-    </div>
-</form>
-
+<a routerLink="/visita/hacer-visita" class ="btn"> Nueva Visita</a>
+<table class='table responsive'>
+  <thead>
+    <!-- Fila -->
+    <tr>
+      <th>Fecha</th>
+      <th>Temperatura</th>
+      <th>Peso</th>
+      <th>Frecuencia Cardiaca</th>
+      <th>Frecuencia Respiratoria</th>
+      <th>Estado</th>
+      <th>Observaciones</th>
+      <th>Medicinas</th>
+      <th>Editar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Trae todos los parametros -->
+    <tr *ngFor="let visita of listadoRegistros">
+      <td> {{visita.fecha}}</td>
+      <td> {{visita.temperatura}}</td>
+      <td> {{visita.peso}}</td>
+      <td> {{visita.frecCardiaca}}</td>
+      <td> {{visita.frecRespiratoria}}</td>
+      <td> {{visita.estado}}</td>
+      <td> {{visita.observaciones}}</td>
+      <td> {{visita.medicinas}}</td>
+      <td><a routerLink="/visita/editar-visita/{{visita.id}}" class="btn">Editar Visita</a></td>
+    </tr>
+  </tbody>
+</table>
