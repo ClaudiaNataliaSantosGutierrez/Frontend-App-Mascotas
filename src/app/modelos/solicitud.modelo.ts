@@ -1,6 +1,6 @@
 export class ModeloSolicitud{
     id?: String;
-    fecha?: Date;
+    fecha?: String;
     detalle?: String;
     personaId?: String;
     veterinarioId?: String;

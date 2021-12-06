@@ -16,8 +16,8 @@
     <tr *ngFor="let s of listaSolicitudes">
       <td>{{s.fecha}}</td>
       <td>{{s.detalle}}</td>
-      <td><a routerLink="/administracion/editar-solicitud/{{s.id}}" class="btn">Editar</a></td>
-      <td><a routerLink="/administracion/eliminar-solicitud/{{s.id}}" class="btn">Eliminar</a></td>
+      <td><a routerLink="/solicitudes/editar-solicitud/{{s.id}}" class="btn">Editar</a></td>
+      <td><a routerLink="/solicitudes/eliminar-solicitud/{{s.id}}" class="btn">Eliminar</a></td>
     </tr>
   </tbody>
 </table>

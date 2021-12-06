@@ -37,6 +37,15 @@ export class VeterinarioService {
     });
   }
 
+  //Traer Veterinario por ID en formato lista
+  ObtenerVeterinarioPorIdLista(id: String): Observable<ModeloVeterinario[]>{
+    return this.http.get<ModeloVeterinario[]>(`${this.url}/veterinarios/${id}`, {
+      headers: new HttpHeaders({
+        'Authorization': `Bearer ${this.token}`
+      })
+    });
+  }
+
   //Traer la cantidad de veterinarios en Base de Datos, el count que no necesita TOKEN
   ObtenerCantidadVeterinarios(): Observable<ModeloCount>{
     return this.http.get<ModeloCount>(`${this.url}/veterinarios/count`);

@@ -37,6 +37,15 @@ export class MascotaService {
     });
   }
 
+  //Traer Mascota Lista ID
+  ObtenerMascotaPorIdLista(id: String): Observable<ModeloMascota[]>{
+    return this.http.get<ModeloMascota[]>(`${this.url}/mascotas/${id}`, {
+      headers: new HttpHeaders({
+        'Authorization': `Bearer ${this.token}`
+      })
+    });
+  }
+
   //Traer la cantidad de mascotas en Base de Datos, el count que no necesita TOKEN
   ObtenerCantidadMascotas(): Observable<ModeloCount>{
     return this.http.get<ModeloCount>(`${this.url}/mascotas/count`);

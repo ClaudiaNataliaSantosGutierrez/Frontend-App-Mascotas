@@ -11,10 +11,9 @@
             <div class="row">
                 <div class="input-field col s4">
                     <select formControlName="mascotaId" class="browser-default">
-                        <option value="" disabled selected>Mascota Enferma</option>
-                        <option value="1">Kan</option>
-                        <option value="2">Copito</option>
-                        <option value="3">Benji</option>
+                        <option *ngFor="let m of listaMascotas" [value]="m.id">
+                            {{m.nombre}} - {{m.tipo}}
+                        </option>
                     </select>
                 </div>
                 <div class="input-field col s4">
@@ -35,7 +34,7 @@
                 <div class="input-field col s4">
                     <label class="active">Usuario Propietario</label>
                     <select formControlName="personaId" class="browser-default">
-                        <option *ngFor="let p of listaPersonas">
+                        <option *ngFor="let p of listaPersonas" [value]="p.id">
                             {{p.nombres}} {{p.apellidos}}
                         </option>
                     </select>
@@ -43,7 +42,7 @@
                 <div class="input-field col s4">
                     <label class="active">Veterinario a Atender</label>
                     <select formControlName="veterinarioId" class="browser-default">
-                        <option *ngFor="let v of listaVeterinarios">
+                        <option *ngFor="let v of listaVeterinarios" [value]="v.id">
                             {{v.nombres}} {{v.apellidos}}
                         </option>
                     </select>

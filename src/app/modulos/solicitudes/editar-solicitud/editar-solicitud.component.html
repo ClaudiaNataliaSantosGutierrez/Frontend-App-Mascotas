@@ -1,62 +1,57 @@
 <br>
 <div class="container">
     <h3>Editar Solicitud de Atención Veterinaria</h3>
-    <p>En esta sección cambiar los datos de la solicitud, como fecha, veterinario, etc.</p>
+    <p>Realice los cambios necesarios en fecha o Veterinario.</p>
     <br>
   </div>
   
   <div class="row">
-      <form class="col s12">
+    <form [formGroup]="fgValidador" (ngSubmit)="EditarSolicitud()" class="col s12">
         <div class="container">
             <div class="row">
                 <div class="input-field col s4">
-                    <select class="browser-default">
-                        <option value="" disabled selected>Mascota Enferma</option>
-                        <option value="1">Kan</option>
-                        <option value="2">Copito</option>
-                        <option value="3">Benji</option>
+                    <select formControlName="mascotaId" class="browser-default">
+                        <option *ngFor="let m of listaMascotas" [value]="m.id">
+                            {{m.nombre}} - {{m.tipo}}
+                        </option>
                     </select>
                 </div>
                 <div class="input-field col s4">
-                    <input placeholder="" id="date" type="date" class="validate">
+                    <input formControlName="fecha" placeholder="" id="date" type="date" class="validate">
                     <label for="date">Fecha Requerida</label>
                 </div>
             </div>
         
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="detalle" type="text" class="validate">
-                    <label for="detalle">Detalle - Indique los sintomas del animal lo más detallado posible.</label>
+                    <input formControlName="detalle" id="detalle" type="text" class="validate">
+                    <label for="detalle" class="active">Detalle - Indique los sintomas del animal lo más detallado posible.</label>
                 </div>
             </div>
   
         
             <div class="row">
                 <div class="input-field col s4">
-                    <select class="browser-default">
-                        <option value="" disabled selected>Persona Solicitante</option>
-                        <option value="1">Claudia</option>
-                        <option value="2">Armando</option>
-                        <option value="3">Ramiro</option>
+                    <label class="active">Usuario Propietario</label>
+                    <select formControlName="personaId" class="browser-default">
+                        <option *ngFor="let p of listaPersonas" [value]="p.id">
+                            {{p.nombres}} {{p.apellidos}}
+                        </option>
                     </select>
                 </div>
                 <div class="input-field col s4">
-                    <select class="browser-default">
-                        <option value="" disabled selected>Veterinario a Atender</option>
-                        <option value="1">Alejandro</option>
-                        <option value="2">Camilo</option>
-                        <option value="3">Raul</option>
+                    <label class="active">Veterinario a Atender</label>
+                    <select formControlName="veterinarioId" class="browser-default">
+                        <option *ngFor="let v of listaVeterinarios" [value]="v.id">
+                            {{v.nombres}} {{v.apellidos}}
+                        </option>
                     </select>
                 </div>
             </div>
         </div>
+        <div class="container">
+            <button [disabled]="!fgValidador.valid" class="btn waves-effect waves-light" type="submit" name="action">Cambiar Solicitud</button>
+        </div>
         
-      </form>
-      <br>
-      <div class="container">
-        <button class="btn waves-effect waves-light" type="submit" name="action">Modificar Solicitud</button>
-      </div>
-      
-      <br>
-    </div>
-
+    </form>
+</div>
