@@ -3,17 +3,30 @@
     <h3>Crear Mascota</h3>
     <p>En esta sección se puede gestionar un propietario de mascota con sus datos personales</p>
   </div>
+  <br>
+  <br>
   
   <div class="row">
-      <form class="col s12">
+      <form [formGroup]="fgValidador" (ngSubmit)="GuardarMascota()" class="col s12">
         <div class="container">
+          <div class="row">
+            <div class="input-field col s4">
+              <label class="active">Usuario Propietario</label>
+              <select formControlName="personaId" class="browser-default">
+                <option *ngFor="let p of listaPersonas">
+                  {{p.id}}
+                </option>
+              </select>
+          </div>
+          </div>
+
             <div class="row">
                 <div class="input-field col s4">
-                    <input placeholder="" id="first_name" type="text" class="validate">
+                    <input formControlName="nombre" placeholder="" id="first_name" type="text" class="validate">
                     <label for="first_name">Nombre</label>
                 </div>
                 <div class="input-field col s4">
-                    <select class="browser-default">
+                    <select formControlName="tipo" class="browser-default">
                         <option value="" disabled selected>Tipo</option>
                         <option value="1">Gato</option>
                         <option value="2">Perro</option>
@@ -24,11 +37,11 @@
         
                 <div class="row">
                 <div class="input-field col s4">
-                    <input id="bornDate" type="date" class="validate">
+                    <input formControlName="fechaNacimiento" id="bornDate" type="date" class="validate">
                     <label for="bornDate">Fecha Nacimiento</label>
                 </div>
                 <div class="input-field col s4">
-                    <input placeholder="" id="raza" type="text" class="validate">
+                    <input formControlName="raza" placeholder="" id="raza" type="text" class="validate">
                     <label for="raza">Raza</label>
                 </div>
                 </div>
@@ -36,25 +49,22 @@
         
             <div class="row">
                 <div class="input-field col s4">
-                  <input placeholder="" id="estatura" type="text" class="validate">
+                  <input formControlName="estatura" placeholder="" id="estatura" type="text" class="validate">
                   <label for="estatura">Estatura</label>
                 </div>
                 <div class="input-field col s4">
-                  <input id="pelaje" type="text" class="validate">
+                  <input formControlName="colorPelaje" id="pelaje" type="text" class="validate">
                   <label for="pelaje">Color Pelaje</label>
                 </div>
                 <div class="input-field col s4">
-                  <input id="ojos" type="text" class="validate">
+                  <input formControlName="colorOjos" id="ojos" type="text" class="validate">
                   <label for="ojos">Color Ojos</label>
                 </div>
               </div>
         </div>
+        <div class="container">
+          <button [disabled]="!fgValidador.valid" class="btn waves-effect waves-light" type="submit" name="action">Crear</button>
+        </div>
         
       </form>
-      <br>
-      <div class="container">
-        <button class="btn waves-effect waves-light" type="submit" name="action">Crear</button>
-      </div>
-      
-      <br>
     </div>

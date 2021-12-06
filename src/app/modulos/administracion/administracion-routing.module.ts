@@ -45,15 +45,19 @@ const routes: Routes = [
     component: CrearMascotaComponent
   },
   {
-    path: 'editar-mascota',
+    path: 'editar-mascota/:id',
     component: EditarMascotaComponent
   },
   {
-    path: 'eliminar-mascota',
+    path: 'eliminar-mascota/:id',
     component: EliminarMascotaComponent
   },
   {
     path: 'buscar-mascota',
+    component: BuscarMascotaComponent
+  },
+  {
+    path: 'listar-mascotas',
     component: BuscarMascotaComponent
   },
   //Rutas para Veterinarios
