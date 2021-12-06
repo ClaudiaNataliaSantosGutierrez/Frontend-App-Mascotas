@@ -33,7 +33,8 @@ export class HacerVisitaComponent implements OnInit {
   }
   
   GuardarVisita(){
-    let fecha = new Date();//
+    let fecha = new Date();//1       Se debe revisar prque el front da un dato tipo 12-12-2021 y se necesita pasar un date completo mas minutos hora  segundso
+
     let temperatura = this.formGroupValidador.controls["temperatura"].value.toString();//2
     let peso = this.formGroupValidador.controls["peso"].value.toString();//3
     let frecCardiaca = this.formGroupValidador.controls["frecCardiaca"].value.toString();//4

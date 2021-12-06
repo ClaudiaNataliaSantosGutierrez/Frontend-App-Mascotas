@@ -20,6 +20,10 @@ export class VisitasService {
     return this.http.get<ModeloVisita[]>(`${this.url}/visitas`);
   }
 
+  ObtenerRegistrosId(id :string): Observable  <ModeloVisita> {
+    return this.http.get<ModeloVisita>(`${this.url}/visitas/${id}`);
+  }
+
   CrearVisita(visita : ModeloVisita) : Observable<ModeloVisita>{
     alert(this.token); 
     return this.http.post<ModeloVisita>(`${this.url}/visitas`,
@@ -32,7 +36,7 @@ export class VisitasService {
   }
 
   ActualizarVisita(visita : ModeloVisita) : Observable<ModeloVisita>{
-    return this.http.put<ModeloVisita>(`${this.url}/visitas`,
+    return this.http.put<ModeloVisita>(`${this.url}/visitas/${visita.id}`,
     visita,{
       headers : new HttpHeaders({
         'Authorization': `Bearer ${this.token}`

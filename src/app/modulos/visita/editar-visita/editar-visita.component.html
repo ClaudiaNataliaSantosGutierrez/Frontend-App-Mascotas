@@ -1,99 +1,100 @@
-<form class="row g-3 needs-validation" novalidate>
-    <div class="col-md-4">
-      <label for="fecha" class="form-label">Fecha</label>
-      <input type="date" class="form-control" id="fecha" placeholder="28-11-2021" required>
+<form class="row g-3 needs-validation" [formGroup]="formGroupValidador">
+  <input type="hidden" formControlName="id"/>
+
+  <div class="col-md-4">
+    <label for="fecha" class="active">Fecha</label>
+    <input formControlName ="fecha" type="date" class="form-control" id="fecha" required>
+    <div class="valid-feedback">
+      Looks good!
+    </div>
+  </div>
+
+  <div class="col-md-2">
+    <label for="temperatura" class="active">temperatura</label>
+    <input type="text" formControlName ="temperatura"  class="form-control" id="temperatura" placeholder="Temperatura" required>
+    <div class="valid-feedback">
+      Looks good!
+    </div>
+    <div class="invalid-feedback">
+      Please select a valid state.
+    </div>
+  </div>
+
+  <div class="col-md-1">
+    <label for="gradosT" class="active">Unidad</label>
+    <select class="form-select" id="gradosT" required>
+      <option>k</option>
+      <option>°C</option>
+      <option>°F</option>
+    </select>
+    <div class="invalid-feedback">
+      Please select a valid state.
+    </div>
+  </div>
+
+  <div class="col-md-3">
+      <label for="peso" class="active">Peso</label>
+      <input type="text"formControlName = "peso"  class="form-control" id="peso" placeholder="" required>
       <div class="valid-feedback">
         Looks good!
       </div>
+  </div>
+  <div class="col-md-2">
+    <label for="UnidadPeso" class="active">Unidad</label>
+    <select class="form-select" id="UnidadPeso" required>
+      <option>kg</option>
+      <option>lbm</option>
+    </select>
+    <div class="invalid-feedback">
+      Please select a valid state.
     </div>
+  </div>
 
-    <div class="col-md-2">
-      <label for="temperatura" class="form-label">temperatura</label>
-      <input type="text" class="form-control" id="temperatura" placeholder="Temperatura" required>
+  <div class="col-md-4">
+      <label for="frecCardiaca" class="active">Frecuencia Cardiaca</label>
+      <input type="text" formControlName = "frecCardiaca" class="form-control" id="frecCardiaca" placeholder="Frecuencia Cardaica" required>
       <div class="valid-feedback">
         Looks good!
       </div>
-      <div class="invalid-feedback">
-        Please select a valid state.
+  </div>
+  <div class="col-md-2">
+    <label for="unidadFrecCar" class="active">Sistema</label>
+    <span class="input-group-text md-1" id="inputGroupPrepend">latidos/min</span>
+  </div>
+  <div class="col-md-4">
+      <label for="frecRespiratoria" class="active">Frecuencia Respiratoria</label>
+      <input type="text" formControlName = "frecRespiratoria" class="form-control" id="frecRespiratoria" placeholder="Frecuencia Respiratoria" required>
+      <div class="valid-feedback">
+        Looks good!
       </div>
-      
-    </div>
+  </div>
+  <div class="col-md-2">
+    <label for="unidadFrecRes" class="active">Sistema</label>
+    <span class="input-group-text md-1" id="inputGroupPrepend">latidos/min</span>
+  </div>
+  <div class="col-md-4">
+      <label for="estado" class="active">Estado</label>
+      <input type="text" formControlName = "estado" class="form-control" id="estado" placeholder="Estado" required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+  </div>
+  <div class="col-md-8">
+      <label for="medicinas" class="active">Medicinas</label>
+      <input type="text" formControlName="medicinas" class="form-control" id="medicinas" placeholder="Medicinas" required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+  </div>
+  <div class="col-md-12">
+      <label for="observaciones" class="active">Observaciones</label>
+      <input type="text" formControlName = "observaciones"class="form-control" id="observaciones" placeholder="Observaciones" required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+  </div>
 
-    <div class="col-md-1">
-      <label for="gradosT" class="form-label">Unidad</label>
-      <select class="form-select" id="gradosT" required>
-        <option>k</option>
-        <option>°C</option>
-        <option>°F</option>
-      </select>
-      <div class="invalid-feedback">
-        Please select a valid state.
-      </div>
-    </div>
-  
-    <div class="col-md-3">
-        <label for="peso" class="form-label">Peso</label>
-        <input type="text" class="form-control" id="peso" placeholder="" required>
-        <div class="valid-feedback">
-          Looks good!
-        </div>
-    </div>
-    <div class="col-md-2">
-      <label for="UnidadPeso" class="form-label">Unidad</label>
-      <select class="form-select" id="UnidadPeso" required>
-        <option>kg</option>
-        <option>lbm</option>
-      </select>
-      <div class="invalid-feedback">
-        Please select a valid state.
-      </div>
-    </div>
-
-    <div class="col-md-4">
-        <label for="frecCardiaca" class="form-label">Frecuencia Cardiaca</label>
-        <input type="text" class="form-control" id="frecCardiaca" placeholder="Frecuencia Cardaica" required>
-        <div class="valid-feedback">
-          Looks good!
-        </div>
-    </div>
-    <div class="col-md-2">
-      <label for="unidadFrecCar" class="form-label">Sistema</label>
-      <span class="input-group-text md-1" id="inputGroupPrepend">latidos/min</span>
-    </div>
-    <div class="col-md-4">
-        <label for="frecRespiratoria" class="form-label">Frecuencia Respiratoria</label>
-        <input type="text" class="form-control" id="frecRespiratoria" placeholder="Frecuencia Respiratoria" required>
-        <div class="valid-feedback">
-          Looks good!
-        </div>
-    </div>
-    <div class="col-md-2">
-      <label for="unidadFrecRes" class="form-label">Sistema</label>
-      <span class="input-group-text md-1" id="inputGroupPrepend">latidos/min</span>
-    </div>
-    <div class="col-md-4">
-        <label for="estado" class="form-label">Estado</label>
-        <input type="text" class="form-control" id="estado" placeholder="Estado" required>
-        <div class="valid-feedback">
-          Looks good!
-        </div>
-    </div>
-    <div class="col-md-8">
-        <label for="medicinas" class="form-label">Medicinas</label>
-        <input type="text" class="form-control" id="medicinas" placeholder="Medicinas" required>
-        <div class="valid-feedback">
-          Looks good!
-        </div>
-    </div>
-    <div class="col-md-12">
-        <label for="observaciones" class="form-label">Observaciones</label>
-        <input type="text" class="form-control" id="observaciones" placeholder="Observaciones" required>
-        <div class="valid-feedback">
-          Looks good!
-        </div>
-    </div>
-  
-    <div class="col-12">
-      <button class="btn btn-primary" type="submit">Crear</button>
-    </div>
+  <div class="col-12">
+    <button [disabled] ="!formGroupValidador.valid" class="btn btn-primary" type="submit" (click)= "EditarVisita()">Crear</button>
+  </div>
 </form>
