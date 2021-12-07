@@ -8,4 +8,5 @@ export class ModeloVeterinario{
     especialidad?: String;
     licencia?: String;
     identificacion?: String;
+    veterinariaId?: String;
 }
