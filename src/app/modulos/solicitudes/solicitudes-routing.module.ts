@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ValidadorSesionGuard } from 'src/app/guardianes/validador-sesion.guard';
 import { BuscarSolicitudComponent } from './buscar-solicitud/buscar-solicitud.component';
 import { CrearSolicitudComponent } from './crear-solicitud/crear-solicitud.component';
 import { EditarSolicitudComponent } from './editar-solicitud/editar-solicitud.component';
@@ -8,23 +9,28 @@ import { EliminarSolicitudComponent } from './eliminar-solicitud/eliminar-solici
 const routes: Routes = [
   {
     path: 'crear-solicitud',
-    component: CrearSolicitudComponent
+    component: CrearSolicitudComponent,
+    canActivate: [ValidadorSesionGuard]
   },
   {
     path: 'editar-solicitud/:id',
-    component: EditarSolicitudComponent
+    component: EditarSolicitudComponent,
+    canActivate: [ValidadorSesionGuard]
   },
   {
     path: 'eliminar-solicitud/:id',
-    component: EliminarSolicitudComponent
+    component: EliminarSolicitudComponent,
+    canActivate: [ValidadorSesionGuard]
   },
   {
     path: 'buscar-solicitud',
-    component: BuscarSolicitudComponent
+    component: BuscarSolicitudComponent,
+    canActivate: [ValidadorSesionGuard]
   },
   {
     path: 'listar-solicitudes',
-    component: BuscarSolicitudComponent
+    component: BuscarSolicitudComponent,
+    canActivate: [ValidadorSesionGuard]
   },
 ];
 

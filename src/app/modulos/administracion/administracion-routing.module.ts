@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ValidadorSesionGuard } from 'src/app/guardianes/validador-sesion.guard';
 import { BuscarMascotaComponent } from './mascotas/buscar-mascota/buscar-mascota.component';
 import { CrearMascotaComponent } from './mascotas/crear-mascota/crear-mascota.component';
 import { EditarMascotaComponent } from './mascotas/editar-mascota/editar-mascota.component';
@@ -21,86 +22,106 @@ const routes: Routes = [
   //Rutas Para Persona
   {
     path: 'crear-persona',
-    component: CrearPersonaComponent
+    component: CrearPersonaComponent,
+    canActivate: [ValidadorSesionGuard]
   },
   {
     path: 'editar-persona/:id',
-    component: EditarPersonaComponent
+    component: EditarPersonaComponent,
+    canActivate: [ValidadorSesionGuard]
   },
   {
     path: 'eliminar-persona/:id',
-    component: EliminarPersonaComponent
+    component: EliminarPersonaComponent,
+    canActivate: [ValidadorSesionGuard]
   },
   {
     path: 'buscar-persona',
-    component: BuscarPersonaComponent
+    component: BuscarPersonaComponent,
+    canActivate: [ValidadorSesionGuard]
   },
   {
     path: 'listar-personas',
-    component: BuscarPersonaComponent
+    component: BuscarPersonaComponent,
+    canActivate: [ValidadorSesionGuard]
   },
   //Rutas para Mascotas
   {
     path: 'crear-mascota',
-    component: CrearMascotaComponent
+    component: CrearMascotaComponent,
+    canActivate: [ValidadorSesionGuard]
   },
   {
     path: 'editar-mascota/:id',
-    component: EditarMascotaComponent
+    component: EditarMascotaComponent,
+    canActivate: [ValidadorSesionGuard]
   },
   {
     path: 'eliminar-mascota/:id',
-    component: EliminarMascotaComponent
+    component: EliminarMascotaComponent,
+    canActivate: [ValidadorSesionGuard]
   },
   {
     path: 'buscar-mascota',
-    component: BuscarMascotaComponent
+    component: BuscarMascotaComponent,
+    canActivate: [ValidadorSesionGuard]
   },
   {
     path: 'listar-mascotas',
-    component: BuscarMascotaComponent
+    component: BuscarMascotaComponent,
+    canActivate: [ValidadorSesionGuard]
   },
   //Rutas para Veterinarios
   {
     path: 'crear-veterinario',
-    component: CrearVeterinarioComponent
+    component: CrearVeterinarioComponent,
+    canActivate: [ValidadorSesionGuard]
   },
   {
     path: 'editar-veterinario/:id',
-    component: EditarVeterinarioComponent
+    component: EditarVeterinarioComponent,
+    canActivate: [ValidadorSesionGuard]
   },
   {
     path: 'eliminar-veterinario/:id',
-    component: EliminarVeterinarioComponent
+    component: EliminarVeterinarioComponent,
+    canActivate: [ValidadorSesionGuard]
   },
   {
     path: 'buscar-veterinario',
-    component: BuscarVeterinarioComponent
+    component: BuscarVeterinarioComponent,
+    canActivate: [ValidadorSesionGuard]
   },
   {
     path: 'listar-veterinarios',
-    component: BuscarVeterinarioComponent
+    component: BuscarVeterinarioComponent,
+    canActivate: [ValidadorSesionGuard]
   },
   //Rutas Para Veterinaria
   {
     path: 'crear-veterinaria',
-    component: CrearVeterinariaComponent
+    component: CrearVeterinariaComponent,
+    canActivate: [ValidadorSesionGuard]
   },
   {
     path: 'editar-veterinaria/:id',
-    component: EditarVeterinariaComponent
+    component: EditarVeterinariaComponent,
+    canActivate: [ValidadorSesionGuard]
   },
   {
     path: 'eliminar-veterinaria/:id',
-    component: EliminarVeterinariaComponent
+    component: EliminarVeterinariaComponent,
+    canActivate: [ValidadorSesionGuard]
   },
   {
     path: 'buscar-veterinaria',
-    component: BuscarVeterinariaComponent
+    component: BuscarVeterinariaComponent,
+    canActivate: [ValidadorSesionGuard]
   },
   {
     path: 'listar-veterinarias',
-    component: BuscarVeterinariaComponent
+    component: BuscarVeterinariaComponent,
+    canActivate: [ValidadorSesionGuard]
   },
 ];
 
