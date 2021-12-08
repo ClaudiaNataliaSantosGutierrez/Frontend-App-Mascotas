@@ -1,0 +1,28 @@
+<br>
+<div>
+  <a routerLink="/visita/hacer-visita" class="btn">Nueva Visita</a>
+</div>
+<br>
+<table class="table responsive">
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>Solicitud</th>
+      <th>Veterinario</th>
+      <th>Estado</th>
+      <th>Editar</th>
+      <th>Eliminar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let v of listaVisitas">
+      <td>{{v.fecha}}</td>
+      <td>{{v.solicitudId}}</td>
+      <td>{{v.veterinarioId}}</td>
+      <td>{{v.estado}}</td>
+      <td><a routerLink="/visita/editar-visita/{{v.id}}" class="btn">Editar</a></td>
+      <td><a routerLink="/visita/eliminar-visita/{{v.id}}" class="btn">Eliminar</a></td>
+    </tr>
+  </tbody>
+</table>
+<p>Solicitudes de visita veterinaria registradas en el sistema: {{cantidadVisitas.count}}</p>

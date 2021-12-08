@@ -37,6 +37,15 @@ export class SolicitudService {
     });
   }
 
+  //Traer Solicitud por ID con GET y enviando el Token
+  ObtenerSolicitudPorIdLista(id: String): Observable<ModeloSolicitud[]>{
+    return this.http.get<ModeloSolicitud[]>(`${this.url}/solicitudes/${id}`, {
+      headers: new HttpHeaders({
+        'Authorization': `Bearer ${this.token}`
+      })
+    });
+  }
+
   //Traer la cantidad de solicituds en Base de Datos, el count que no necesita TOKEN
   ObtenerCantidadSolicitudes(): Observable<ModeloCount>{
     return this.http.get<ModeloCount>(`${this.url}/solicitudes/count`);
